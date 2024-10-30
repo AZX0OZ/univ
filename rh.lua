@@ -1,828 +1,504 @@
--- ds: https://discord.gg/bvEQEUuCFQ
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
 
--- tg: https://t.me/+FizXrGSg3B9jZTRi
+]]--
 
- -- ###############            ###           ###   ###              ###          ###   ###        ###   ############                      
- -- ###          ###          #####          ###   ###              ###          ###   ###        ###   ###       ###                         
- -- ###          ###         ### ###               ###              ###          ###   ###        ###   ###       ###              
- -- ###        ###          ###   ###        ###   ###              ###          ###   ###        ###   ############                          
- -- ############           ###     ###       ###   ###              ################   ###        ###   ###        ###                                  
- -- ###       ###         #############      ###   ###              ################   ###        ###   ###         ###                   
- -- ###        ###       ###         ###     ###   ###              ###          ###   ###        ###   ###         ###                              
- -- ###         ###     ###           ###    ###   ##############   ###          ###    ############    ###         ###                         
- -- ###          ###   ###             ###   ###   ##############   ###          ###     ##########     ##############                                               
-----------------------------------------------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------------------------------------------
- ---------------------------------------------------------------------------------------------------------------------
--- Ссылка на Библиотеку
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
--- Создать окно UI
-local Window = OrionLib:MakeWindow({Name = "RAILhub universal", HidePremium = false, IntroText = "RAILhub", SaveConfig = false, ConfigFolder = "OrionTest"})
-
----------------------------------------------------------------------------------------------------
-local Tab = Window:MakeTab({
-	Name = "Info",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
--- Подсекция
-local Section = Tab:AddSection({
-	Name = "Last Update : 1.11.2024!"
-})
-
--- Подсекция
-local Section = Tab:AddSection({
-	Name = "v 0.0.1.0!"
-})
-
-local textToCopy = "https://discord.gg/bvEQEUuCFQ" -- Замените этот текст на нужный вам.
-
-Tab:AddButton({
-    Name = "Discord Link",
-    Callback = function()
-        -- Копирование текста в буфер обмена
-        setclipboard(textToCopy)
-        print("Ссылка была скопирована: " .. textToCopy) -- Печатает сообщение в консоль для подтверждения
-    end    
-})
-
-local textToCopy = "https://t.me/+FizXrGSg3B9jZTRi" -- Замените этот текст на нужный вам.
-
-Tab:AddButton({
-    Name = "Telegram Link",
-    Callback = function()
-        -- Копирование текста в буфер обмена
-        setclipboard(textToCopy)
-        print("Ссылка была скопирована: " .. textToCopy) -- Печатает сообщение в консоль для подтверждения
-    end    
-})
------------------------------------------------------------------------------------------------------------
-
--- Секция-------------------------------------------------------------------------------------------------
-local Tab = Window:MakeTab({
-	Name = "Esp",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
--- Подсекция
-local Section = Tab:AddSection({
-	Name = "Esp"
-})
-
-local players = game:GetService("Players")
-local localPlayer = players.LocalPlayer
-local camera = game:GetService("Workspace").CurrentCamera
-
-local showESPBox = false
-local showESPName = false
-local showESPTeam = false
-local showHealthBar = false
-local showDistance = false
-
-local updateInterval = 0.042
-
+local TABLE_TableIndirection = {};
+TABLE_TableIndirection["OrionLib%0"] = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))();
+TABLE_TableIndirection["Window%0"] = TABLE_TableIndirection["OrionLib%0"]:MakeWindow({Name="RAILhub universal",HidePremium=false,IntroText="RAILhub",SaveConfig=false,ConfigFolder="OrionTest"});
+TABLE_TableIndirection["Tab%0"] = TABLE_TableIndirection["Window%0"]:MakeTab({Name="Info",Icon="rbxassetid://4483345998",PremiumOnly=false});
+TABLE_TableIndirection["Section%0"] = TABLE_TableIndirection["Tab%0"]:AddSection({Name="Last Update : 1.11.2024!"});
+TABLE_TableIndirection["Section%1"] = TABLE_TableIndirection["Tab%0"]:AddSection({Name="v 0.0.1.0!"});
+TABLE_TableIndirection["textToCopy%0"] = "https://discord.gg/bvEQEUuCFQ";
+TABLE_TableIndirection["Tab%0"]:AddButton({Name="Discord Link",Callback=function()
+	setclipboard(TABLE_TableIndirection["textToCopy%0"]);
+	print("Ссылка была скопирована: " .. TABLE_TableIndirection["textToCopy%0"]);
+end});
+TABLE_TableIndirection["textToCopy%1"] = "https://t.me/+FizXrGSg3B9jZTRi";
+TABLE_TableIndirection["Tab%0"]:AddButton({Name="Telegram Link",Callback=function()
+	setclipboard(TABLE_TableIndirection["textToCopy%1"]);
+	print("Ссылка была скопирована: " .. TABLE_TableIndirection["textToCopy%1"]);
+end});
+TABLE_TableIndirection["Tab%1"] = TABLE_TableIndirection["Window%0"]:MakeTab({Name="Esp",Icon="rbxassetid://4483345998",PremiumOnly=false});
+TABLE_TableIndirection["Section%2"] = TABLE_TableIndirection["Tab%1"]:AddSection({Name="Esp"});
+TABLE_TableIndirection["players%0"] = game:GetService("Players");
+TABLE_TableIndirection["localPlayer%0"] = TABLE_TableIndirection["players%0"].LocalPlayer;
+TABLE_TableIndirection["camera%0"] = game:GetService("Workspace").CurrentCamera;
+TABLE_TableIndirection["showESPBox%0"] = false;
+TABLE_TableIndirection["showESPName%0"] = false;
+TABLE_TableIndirection["showESPTeam%0"] = false;
+TABLE_TableIndirection["showHealthBar%0"] = false;
+TABLE_TableIndirection["showDistance%0"] = false;
+TABLE_TableIndirection["updateInterval%0"] = 0.042;
 local function createESP(player)
-    local espBoxOutline = Drawing.new("Square")
-    espBoxOutline.Color = Color3.new(0, 0, 0)
-    espBoxOutline.Thickness = 0.2
-    espBoxOutline.Transparency = 1
-    espBoxOutline.Filled = false
-    espBoxOutline.Visible = false
-
-    local espBox = Drawing.new("Square")
-    espBox.Color = Color3.new(1, 1, 1)
-    espBox.Thickness = 0.7
-    espBox.Transparency = 1
-    espBox.Filled = false
-    espBox.Visible = false
-
-    local espName = Drawing.new("Text")
-    espName.Color = Color3.new(1, 1, 1)
-    espName.Size = 15
-    espName.Center = true
-    espName.Outline = true
-    espName.Text = player.Name
-    espName.Visible = false
-
-    local espTeam = Drawing.new("Text")
-    espTeam.Size = 14
-    espTeam.Center = true
-    espTeam.Outline = true
-    espTeam.Visible = false
-
-    local healthBarBackground = Drawing.new("Square")
-    healthBarBackground.Color = Color3.new(0, 0, 0)
-    healthBarBackground.Filled = true
-    healthBarBackground.Transparency = 0.6
-    healthBarBackground.Thickness = 1
-    healthBarBackground.Visible = false
-
-    local healthBar = Drawing.new("Square")
-    healthBar.Color = Color3.new(0, 1, 0)
-    healthBar.Filled = true
-    healthBar.Transparency = 0.5
-    healthBar.Thickness = 1
-    healthBar.Visible = false
-
-    local distanceLabel = Drawing.new("Text")
-    distanceLabel.Color = Color3.new(1, 1, 1)
-    distanceLabel.Size = 13
-    distanceLabel.Center = true
-    distanceLabel.Outline = true
-    distanceLabel.Visible = false
-
-    local lastUpdate = 0
-
-    local function updateESP()
-        if tick() - lastUpdate < updateInterval then return end
-        lastUpdate = tick()
-
-        if not showESPBox and not showESPName and not showESPTeam and not showHealthBar and not showDistance then
-            espBoxOutline.Visible = false
-            espBox.Visible = false
-            espName.Visible = false
-            espTeam.Visible = false
-            healthBar.Visible = false
-            healthBarBackground.Visible = false
-            distanceLabel.Visible = false
-            return
-        end
-
-        local character = player.Character
-        if character and character:FindFirstChild("HumanoidRootPart") and character:FindFirstChild("Head") then
-            local rootPart = character:FindFirstChild("HumanoidRootPart")
-            local head = character:FindFirstChild("Head")
-            local humanoid = character:FindFirstChild("Humanoid")
-
-            local rootPos, onScreenRoot = camera:WorldToViewportPoint(rootPart.Position)
-            local headPos, onScreenHead = camera:WorldToViewportPoint(head.Position)
-            local legPos
-
-            if humanoid then
-                -- For R15, we can make an adjustment to the leg position
-                if humanoid.RigType == Enum.HumanoidRigType.R15 then
-                    legPos = rootPart.Position - Vector3.new(0, 5.5, 0)  -- Height set to the bottom of R15 model
-                else
-                    legPos = rootPart.Position - Vector3.new(1, -5.51, 1)  -- Height set to the bottom of R6 model
-                end
-
-                if onScreenRoot and onScreenHead then
-                    local height = (headPos.Y - camera:WorldToViewportPoint(legPos).Y)
-                    local width = height / 2
-
-                    if showESPBox then
-                        espBoxOutline.Size = Vector2.new(width + 4, height + 4)
-                        espBoxOutline.Position = Vector2.new(rootPos.X - width / 2 - 2, headPos.Y - 2)
-                        espBoxOutline.Visible = true
-
-                        espBox.Size = Vector2.new(width, height)
-                        espBox.Position = Vector2.new(rootPos.X - width / 2, headPos.Y)
-                        espBox.Visible = true
-                    else
-                        espBoxOutline.Visible = false
-                        espBox.Visible = false
-                    end
-
-                    if showESPName then
-                        espName.Position = Vector2.new(rootPos.X, headPos.Y - 20)
-                        espName.Visible = true
-                    else
-                        espName.Visible = false
-                    end
-
-                    if showESPTeam then
-                        if player.Team then
-                            local teamColor = player.Team.TeamColor.Color
-                            espTeam.Color = teamColor
-                            espTeam.Text = player.Team.Name
-                            espTeam.Position = Vector2.new(rootPos.X, headPos.Y - 34)
-                            espTeam.Visible = true
-                        else
-                            espTeam.Visible = false
-                        end
-                    else
-                        espTeam.Visible = false
-                    end
-
-                    if showHealthBar and humanoid then
-                        local health = humanoid.Health
-                        local maxHealth = humanoid.MaxHealth
-                        healthBarBackground.Size = Vector2.new(5, height)
-                        healthBarBackground.Position = Vector2.new(rootPos.X - width / 2 - 10, headPos.Y)
-                        healthBarBackground.Visible = true
-
-                        healthBar.Size = Vector2.new(5, (health / maxHealth) * height)
-                        healthBar.Position = Vector2.new(rootPos.X - width / 2 - 10, headPos.Y + height - healthBar.Size.Y)
-                        healthBar.Visible = true
-                    else
-                        healthBar.Visible = false
-                        healthBarBackground.Visible = false
-                    end
-
-                    local distance = (rootPart.Position - localPlayer.Character.HumanoidRootPart.Position).magnitude
-                    if showDistance and distance < 500 then
-                        distanceLabel.Text = string.format("%.2f m", distance)
-                        distanceLabel.Position = Vector2.new(rootPos.X, headPos.Y - 48)
-                        distanceLabel.Visible = true
-                    else
-                        distanceLabel.Visible = false
-                    end
-                else
-                    espBoxOutline.Visible = false
-                    espBox.Visible = false
-                    espName.Visible = false
-                    espTeam.Visible = false
-                    healthBar.Visible = false
-                    healthBarBackground.Visible = false
-                    distanceLabel.Visible = false
-                end
-            else
-                espBoxOutline.Visible = false
-                espBox.Visible = false
-                espName.Visible = false
-                espTeam.Visible = false
-                healthBar.Visible = false
-                healthBarBackground.Visible = false
-                distanceLabel.Visible = false
-            end
-        else
-            espBoxOutline.Visible = false
-            espBox.Visible = false
-            espName.Visible = false
-            espTeam.Visible = false
-            healthBar.Visible = false
-            healthBarBackground.Visible = false
-            distanceLabel.Visible = false
-        end
-    end
-
-    local connection = game:GetService("RunService").RenderStepped:Connect(updateESP)
-
-    player.AncestryChanged:Connect(function()
-        if not player:IsDescendantOf(game) then
-            connection:Disconnect()
-            espBoxOutline:Remove()
-            espBox:Remove()
-            espName:Remove()
-            espTeam:Remove()
-            healthBar:Remove()
-            healthBarBackground:Remove()
-            distanceLabel:Remove()
-        end
-    end)
-end
-
-for _, player in pairs(players:GetPlayers()) do
-    if player ~= localPlayer then
-        createESP(player)
-    end
-end
-
-players.PlayerAdded:Connect(function(player)
-    if player ~= localPlayer then
-        createESP(player)
-    end
-end)
-
--- UI Toggles for ESP options
-Tab:AddToggle({
-    Name = "ESP Box",
-    Default = false,
-    Callback = function(Value)
-        showESPBox = Value
-    end
-})
-
-Tab:AddToggle({
-    Name = "ESP Name",
-    Default = false,
-    Callback = function(Value)
-        showESPName = Value
-    end
-})
-
-Tab:AddToggle({
-    Name = "ESP Team",
-    Default = false,
-    Callback = function(Value)
-        showESPTeam = Value
-    end
-})
-
-Tab:AddToggle({
-    Name = "Health Bar",
-    Default = false,
-    Callback = function(Value)
-        showHealthBar = Value
-    end
-})
-
-Tab:AddToggle({
-    Name = "ESP Distance",
-    Default = false,
-    Callback = function(Value)
-        showDistance = Value
-    end
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
--- Секция-------------------------------------------------------------------------------------------------
-local Tab = Window:MakeTab({
-	Name = "Aim",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
--- Подсекция
-local Section = Tab:AddSection({
-	Name = "Aim Bot"
-})
-
-
-
-
-
-
-
-
-
-
-local Camera = workspace.CurrentCamera
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
-local TweenService = game:GetService("TweenService")
-local LocalPlayer = Players.LocalPlayer
-local Holding = false
-
-_G.AimbotEnabled = false
-_G.AimbotActive = false -- For sticky aim
-_G.SilentAimEnabled = false -- For silent aim
-_G.TeamCheck = false
-_G.AimPart = "Head"
-_G.Sensitivity = 0.1
-_G.PredictionEnabled = false
-_G.PredictionStrength = 0 -- Default value for motion prediction
-
-_G.CircleSides = 10
-_G.CircleColor = Color3.fromRGB(255, 255, 255)
-_G.CircleTransparency = 1
-_G.CircleRadius = 0 -- Default Radius to find players
-_G.CircleFilled = false
-_G.CircleVisible = true
-_G.CircleThickness = 1
-
-local FOVCircle = Drawing.new("Circle")
-FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
-FOVCircle.Radius = _G.CircleRadius
-FOVCircle.Filled = _G.CircleFilled
-FOVCircle.Color = _G.CircleColor
-FOVCircle.Visible = _G.CircleVisible
-FOVCircle.Transparency = _G.CircleTransparency
-FOVCircle.NumSides = _G.CircleSides
-FOVCircle.Thickness = _G.CircleThickness
-
-local currentTarget = nil -- Variable to store the currently targeted player
-
-local function GetClosestPlayer()
-    local closestDistance = _G.CircleRadius
-    local target = nil
-    local centerPoint = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
-
-    for _, player in pairs(Players:GetPlayers()) do
-        if player ~= LocalPlayer then
-            if not _G.TeamCheck or (player.Team ~= LocalPlayer.Team) then
-                local character = player.Character
-                if character and character:FindFirstChild("HumanoidRootPart") then
-                    local humanoid = character:FindFirstChild("Humanoid")
-                    if humanoid and humanoid.Health > 0 then
-                        local screenPoint = Camera:WorldToScreenPoint(character.HumanoidRootPart.Position)
-                        local vectorDistance = (centerPoint - Vector2.new(screenPoint.X, screenPoint.Y)).Magnitude
-
-                        -- Check if the player is within the FOV radius and closer to the center
-                        if vectorDistance < closestDistance then
-                            target = player
-                            closestDistance = vectorDistance
-                        end
-                    end
-                end
-            end
-        end
-    end
-
-    return target
-end
-
-local function PredictTargetPosition(target)
-    if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
-        local humanoidRootPart = target.Character.HumanoidRootPart
-        local velocity = humanoidRootPart.Velocity
-        local predictedPosition = humanoidRootPart.Position + (velocity * _G.PredictionStrength)
-        return predictedPosition
-    end
-    return nil
-end
-
-UserInputService.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton2 then
-        Holding = true
-
-        -- Lock onto the closest player when aiming is initiated
-        if _G.AimbotEnabled then
-            currentTarget = GetClosestPlayer()
-        end
-    end
-end)
-
-UserInputService.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton2 then
-        Holding = false
-        currentTarget = nil -- Release the target when aiming is stopped
-    end
-end)
-
-RunService.RenderStepped:Connect(function()
-    FOVCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
-    FOVCircle.Radius = _G.CircleRadius
-    FOVCircle.Filled = _G.CircleFilled
-    FOVCircle.Color = _G.CircleColor
-    FOVCircle.Visible = _G.CircleVisible
-    FOVCircle.Transparency = _G.CircleTransparency
-    FOVCircle.NumSides = _G.CircleSides
-    FOVCircle.Thickness = _G.CircleThickness
-
-    if Holding and _G.AimbotEnabled then
-        local aimPosition
-
-        if currentTarget then
-            -- Predict the position if motion prediction is enabled
-            if _G.PredictionEnabled then
-                aimPosition = PredictTargetPosition(currentTarget)
-            else
-                aimPosition = currentTarget.Character[_G.AimPart].Position
-            end
-
-            -- Silent aim logic
-            if _G.SilentAimEnabled then
-                -- No need to move camera, just mark target for shooting accuracy
-                -- You can add silent aim shooting logic here if required
-            elseif _G.AimbotActive then
-                -- Sticky aim logic: moves camera towards the target
-                if aimPosition then
-                    TweenService:Create(Camera, TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine), {CFrame = CFrame.new(Camera.CFrame.Position, aimPosition)}):Play()
-                end
-            end
-        end
-    end
-end)
-
--- Toggle Implementation for Aimbot
-Tab:AddToggle({
-    Name = "Enable aim",
-    Default = _G.AimbotEnabled,
-    Callback = function(aimbot)
-        _G.AimbotEnabled = aimbot
-    end    
-})
-
--- Aimbot Active Toggle
-Tab:AddToggle({
-    Name = "sticky aim",
-    Default = _G.AimbotActive,
-    Callback = function(active)
-        _G.AimbotActive = active
-    end    
-})
-
-Tab:AddDropdown({
-    Name = "Aim Part",
-    Default = "Head",
-    Options = {"Head", "Torso"},
-    Callback = function(aim)
-        _G.AimPart = aim
-    end    
-})
-
--- Slider Implementation for Sensitivity
-Tab:AddSlider({
-    Name = "Sensitivity",
-    Min = 0,
-    Max = 1,
-    Default = _G.Sensitivity,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 0.001,
-    ValueName = " ",
-    Callback = function(Sens)
-        _G.Sensitivity = Sens
-    end    
-})
-
--- Slider Implementation for FOV
-Tab:AddSlider({
-    Name = "Aim FOV",
-    Min = 0,
-    Max = 1000,
-    Default = _G.CircleRadius,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 1,
-    ValueName = " ",
-    Callback = function(Value)
-        _G.CircleRadius = Value
-    end    
-})
-
--- Toggle for Motion Prediction
-Tab:AddToggle({
-    Name = "Prediction",
-    Default = _G.PredictionEnabled,
-    Callback = function(value)
-        _G.PredictionEnabled = value
-    end    
-})
-
--- Slider for Prediction Strength
-Tab:AddSlider({
-    Name = "Prediction Strength",
-    Min = 0,
-    Max = 2, -- Adjust max as needed for how much you want to predict movement
-    Default = _G.PredictionStrength,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 0.01,
-    ValueName = " ",
-    Callback = function(value)
-        _G.PredictionStrength = value
-    end    
-})
-
-Tab:AddColorpicker({
-    Name = "FOV Color",
-    Default = Color3.fromRGB(255, 255, 255),
-    Callback = function(color)
-        _G.CircleColor = color
-    end   
-})
-
--- Toggle for Team Check
-Tab:AddToggle({
-    Name = "Team Check",
-    Default = _G.TeamCheck,
-    Callback = function(Value)
-        _G.TeamCheck = Value
-    end
-})
-
--- Slider Implementation for Transparency
-Tab:AddSlider({
-    Name = "FOV Transparency",
-    Min = 0,
-    Max = 1,
-    Default = _G.CircleTransparency,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 0.001,
-    ValueName = " ",
-    Callback = function(trans)
-        _G.CircleTransparency = trans
-    end    
-})
-
--- Секция-------------------------------------------------------------------------------------------------
-local Tab = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local savedFov = 70 -- Variable to hold the saved FOV value
-
-Tab:AddSlider({
-    Name = "Fov",
-    Min = 10,
-    Max = 120,
-    Default = 70,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 1,
-    ValueName = "Fov",
-    Callback = function(Value)
-        -- Change the camera's Field of View
-        local player = game.Players.LocalPlayer
-        local camera = workspace.CurrentCamera
-
-        -- Set the Field of View to the value from the slider
-        camera.FieldOfView = Value
-        savedFov = Value -- Save the new value
-    end    
-})
-
--- Function to reset the FOV when the right mouse button is released
-local function onRightMouseButtonReleased()
-    wait(1) -- Wait for 0.5 seconds
-    local player = game.Players.LocalPlayer
-    local camera = workspace.CurrentCamera
-
-    -- Check if the current FOV matches the saved FOV
-    if camera.FieldOfView ~= savedFov then
-        camera.FieldOfView = savedFov -- Reset to saved FOV
-    end
-end
-
--- Bind the right mouse button release event
-local userInputService = game:GetService("UserInputService")
-userInputService.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton2 then -- Right mouse button
-        onRightMouseButtonReleased()
-    end
-end)
-
--- Подсекция
-local Section = Tab:AddSection({
-	Name = "TpTool"
-})
-
--- Кнопка
-Tab:AddButton({
-    Name = "TpTool",
-    Callback = function()
-        local LocalPlayer = game.Players.LocalPlayer
-        local rp = LocalPlayer.Character.HumanoidRootPart
-        local tool = Instance.new("Tool", LocalPlayer.Backpack)
-        local mouse = LocalPlayer:GetMouse()
-
-        tool.Name = "click tp"
-        tool.RequiresHandle = false
-        
-        tool.Activated:Connect(function()
-            rp.CFrame = CFrame.new(mouse.Hit.X, mouse.Hit.Y + 4, mouse.Hit.Z)
-        end)
-    end
-})
-
----------------------------------------------------------------------------------------------------
-local Tab = Window:MakeTab({
-	Name = "Мaр",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
--- Подсекция
-local Section = Tab:AddSection({
-	Name = "Map"
-})
-
--- Кнопка
-Tab:AddButton({
-    Name = "Full bright",
-    Callback = function()
-if not _G.FullBrightExecuted then
-
-	_G.FullBrightEnabled = false
-
-	_G.NormalLightingSettings = {
-		Brightness = game:GetService("Lighting").Brightness,
-		ClockTime = game:GetService("Lighting").ClockTime,
-		FogEnd = game:GetService("Lighting").FogEnd,
-		GlobalShadows = game:GetService("Lighting").GlobalShadows,
-		Ambient = game:GetService("Lighting").Ambient
-	}
-
-	game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function()
-		if game:GetService("Lighting").Brightness ~= 1 and game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness then
-			_G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness
-			if not _G.FullBrightEnabled then
-				repeat
-					wait()
-				until _G.FullBrightEnabled
-			end
-			game:GetService("Lighting").Brightness = 1
+	TABLE_TableIndirection["espBoxOutline%0"] = Drawing.new("Square");
+	TABLE_TableIndirection["espBoxOutline%0"].Color = Color3.new(0, 0, 0);
+	TABLE_TableIndirection["espBoxOutline%0"].Thickness = 0.2;
+	TABLE_TableIndirection["espBoxOutline%0"].Transparency = 1;
+	TABLE_TableIndirection["espBoxOutline%0"].Filled = false;
+	TABLE_TableIndirection["espBoxOutline%0"].Visible = false;
+	TABLE_TableIndirection["espBox%0"] = Drawing.new("Square");
+	TABLE_TableIndirection["espBox%0"].Color = Color3.new(1, 1, 1);
+	TABLE_TableIndirection["espBox%0"].Thickness = 0.7;
+	TABLE_TableIndirection["espBox%0"].Transparency = 1;
+	TABLE_TableIndirection["espBox%0"].Filled = false;
+	TABLE_TableIndirection["espBox%0"].Visible = false;
+	TABLE_TableIndirection["espName%0"] = Drawing.new("Text");
+	TABLE_TableIndirection["espName%0"].Color = Color3.new(1, 1, 1);
+	TABLE_TableIndirection["espName%0"].Size = 15;
+	TABLE_TableIndirection["espName%0"].Center = true;
+	TABLE_TableIndirection["espName%0"].Outline = true;
+	TABLE_TableIndirection["espName%0"].Text = player.Name;
+	TABLE_TableIndirection["espName%0"].Visible = false;
+	TABLE_TableIndirection["espTeam%0"] = Drawing.new("Text");
+	TABLE_TableIndirection["espTeam%0"].Size = 14;
+	TABLE_TableIndirection["espTeam%0"].Center = true;
+	TABLE_TableIndirection["espTeam%0"].Outline = true;
+	TABLE_TableIndirection["espTeam%0"].Visible = false;
+	TABLE_TableIndirection["healthBarBackground%0"] = Drawing.new("Square");
+	TABLE_TableIndirection["healthBarBackground%0"].Color = Color3.new(0, 0, 0);
+	TABLE_TableIndirection["healthBarBackground%0"].Filled = true;
+	TABLE_TableIndirection["healthBarBackground%0"].Transparency = 0.6;
+	TABLE_TableIndirection["healthBarBackground%0"].Thickness = 1;
+	TABLE_TableIndirection["healthBarBackground%0"].Visible = false;
+	TABLE_TableIndirection["healthBar%0"] = Drawing.new("Square");
+	TABLE_TableIndirection["healthBar%0"].Color = Color3.new(0, 1, 0);
+	TABLE_TableIndirection["healthBar%0"].Filled = true;
+	TABLE_TableIndirection["healthBar%0"].Transparency = 0.5;
+	TABLE_TableIndirection["healthBar%0"].Thickness = 1;
+	TABLE_TableIndirection["healthBar%0"].Visible = false;
+	TABLE_TableIndirection["distanceLabel%0"] = Drawing.new("Text");
+	TABLE_TableIndirection["distanceLabel%0"].Color = Color3.new(1, 1, 1);
+	TABLE_TableIndirection["distanceLabel%0"].Size = 13;
+	TABLE_TableIndirection["distanceLabel%0"].Center = true;
+	TABLE_TableIndirection["distanceLabel%0"].Outline = true;
+	TABLE_TableIndirection["distanceLabel%0"].Visible = false;
+	TABLE_TableIndirection["lastUpdate%0"] = 0;
+	local function updateESP()
+		if ((tick() - TABLE_TableIndirection["lastUpdate%0"]) < TABLE_TableIndirection["updateInterval%0"]) then
+			return;
 		end
-	end)
-
-	game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function()
-		if game:GetService("Lighting").ClockTime ~= 13 and game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime then
-			_G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime
-			if not _G.FullBrightEnabled then
-				repeat
-					wait()
-				until _G.FullBrightEnabled
-			end
-			game:GetService("Lighting").ClockTime = 13
+		TABLE_TableIndirection["lastUpdate%0"] = tick();
+		if (not TABLE_TableIndirection["showESPBox%0"] and not TABLE_TableIndirection["showESPName%0"] and not TABLE_TableIndirection["showESPTeam%0"] and not TABLE_TableIndirection["showHealthBar%0"] and not TABLE_TableIndirection["showDistance%0"]) then
+			TABLE_TableIndirection["espBoxOutline%0"].Visible = false;
+			TABLE_TableIndirection["espBox%0"].Visible = false;
+			TABLE_TableIndirection["espName%0"].Visible = false;
+			TABLE_TableIndirection["espTeam%0"].Visible = false;
+			TABLE_TableIndirection["healthBar%0"].Visible = false;
+			TABLE_TableIndirection["healthBarBackground%0"].Visible = false;
+			TABLE_TableIndirection["distanceLabel%0"].Visible = false;
+			return;
 		end
-	end)
-
-	game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function()
-		if game:GetService("Lighting").FogEnd ~= 786543 and game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd then
-			_G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd
-			if not _G.FullBrightEnabled then
-				repeat
-					wait()
-				until _G.FullBrightEnabled
-			end
-			game:GetService("Lighting").FogEnd = 786543
-		end
-	end)
-
-	game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function()
-		if game:GetService("Lighting").GlobalShadows ~= false and game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows then
-			_G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows
-			if not _G.FullBrightEnabled then
-				repeat
-					wait()
-				until _G.FullBrightEnabled
-			end
-			game:GetService("Lighting").GlobalShadows = false
-		end
-	end)
-
-	game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
-		if game:GetService("Lighting").Ambient ~= Color3.fromRGB(178, 178, 178) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
-			_G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
-			if not _G.FullBrightEnabled then
-				repeat
-					wait()
-				until _G.FullBrightEnabled
-			end
-			game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
-		end
-	end)
-
-	game:GetService("Lighting").Brightness = 1
-	game:GetService("Lighting").ClockTime = 13
-	game:GetService("Lighting").FogEnd = 786543
-	game:GetService("Lighting").GlobalShadows = false
-	game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
-
-	local LatestValue = true
-	spawn(function()
-		repeat
-			wait()
-		until _G.FullBrightEnabled
-		while wait() do
-			if _G.FullBrightEnabled ~= LatestValue then
-				if not _G.FullBrightEnabled then
-					game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness
-					game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime
-					game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd
-					game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows
-					game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient
+		TABLE_TableIndirection["character%0"] = player.Character;
+		if (TABLE_TableIndirection["character%0"] and TABLE_TableIndirection["character%0"]:FindFirstChild("HumanoidRootPart") and TABLE_TableIndirection["character%0"]:FindFirstChild("Head")) then
+			TABLE_TableIndirection["rootPart%0"] = TABLE_TableIndirection["character%0"]:FindFirstChild("HumanoidRootPart");
+			TABLE_TableIndirection["head%0"] = TABLE_TableIndirection["character%0"]:FindFirstChild("Head");
+			TABLE_TableIndirection["humanoid%0"] = TABLE_TableIndirection["character%0"]:FindFirstChild("Humanoid");
+			local rootPos, onScreenRoot = TABLE_TableIndirection["camera%0"]:WorldToViewportPoint(TABLE_TableIndirection["rootPart%0"].Position);
+			local headPos, onScreenHead = TABLE_TableIndirection["camera%0"]:WorldToViewportPoint(TABLE_TableIndirection["head%0"].Position);
+			TABLE_TableIndirection["legPos%0"] = nil;
+			if TABLE_TableIndirection["humanoid%0"] then
+				if (TABLE_TableIndirection["humanoid%0"].RigType == Enum.HumanoidRigType.R15) then
+					TABLE_TableIndirection["legPos%0"] = TABLE_TableIndirection["rootPart%0"].Position - Vector3.new(0, 5.5, 0);
 				else
-					game:GetService("Lighting").Brightness = 1
-					game:GetService("Lighting").ClockTime = 12
-					game:GetService("Lighting").FogEnd = 786543
-					game:GetService("Lighting").GlobalShadows = false
-					game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+					TABLE_TableIndirection["legPos%0"] = TABLE_TableIndirection["rootPart%0"].Position - Vector3.new(1, -5.51, 1);
 				end
-				LatestValue = not LatestValue
+				if (onScreenRoot and onScreenHead) then
+					TABLE_TableIndirection["height%0"] = headPos.Y - TABLE_TableIndirection["camera%0"]:WorldToViewportPoint(TABLE_TableIndirection["legPos%0"]).Y;
+					TABLE_TableIndirection["width%0"] = TABLE_TableIndirection["height%0"] / 2;
+					if TABLE_TableIndirection["showESPBox%0"] then
+						TABLE_TableIndirection["espBoxOutline%0"].Size = Vector2.new(TABLE_TableIndirection["width%0"] + 4, TABLE_TableIndirection["height%0"] + 4);
+						TABLE_TableIndirection["espBoxOutline%0"].Position = Vector2.new((rootPos.X - (TABLE_TableIndirection["width%0"] / 2)) - 2, headPos.Y - 2);
+						TABLE_TableIndirection["espBoxOutline%0"].Visible = true;
+						TABLE_TableIndirection["espBox%0"].Size = Vector2.new(TABLE_TableIndirection["width%0"], TABLE_TableIndirection["height%0"]);
+						TABLE_TableIndirection["espBox%0"].Position = Vector2.new(rootPos.X - (TABLE_TableIndirection["width%0"] / 2), headPos.Y);
+						TABLE_TableIndirection["espBox%0"].Visible = true;
+					else
+						TABLE_TableIndirection["espBoxOutline%0"].Visible = false;
+						TABLE_TableIndirection["espBox%0"].Visible = false;
+					end
+					if TABLE_TableIndirection["showESPName%0"] then
+						TABLE_TableIndirection["espName%0"].Position = Vector2.new(rootPos.X, headPos.Y - 20);
+						TABLE_TableIndirection["espName%0"].Visible = true;
+					else
+						TABLE_TableIndirection["espName%0"].Visible = false;
+					end
+					if TABLE_TableIndirection["showESPTeam%0"] then
+						if player.Team then
+							TABLE_TableIndirection["teamColor%0"] = player.Team.TeamColor.Color;
+							TABLE_TableIndirection["espTeam%0"].Color = TABLE_TableIndirection["teamColor%0"];
+							TABLE_TableIndirection["espTeam%0"].Text = player.Team.Name;
+							TABLE_TableIndirection["espTeam%0"].Position = Vector2.new(rootPos.X, headPos.Y - 34);
+							TABLE_TableIndirection["espTeam%0"].Visible = true;
+						else
+							TABLE_TableIndirection["espTeam%0"].Visible = false;
+						end
+					else
+						TABLE_TableIndirection["espTeam%0"].Visible = false;
+					end
+					if (TABLE_TableIndirection["showHealthBar%0"] and TABLE_TableIndirection["humanoid%0"]) then
+						TABLE_TableIndirection["health%0"] = TABLE_TableIndirection["humanoid%0"].Health;
+						TABLE_TableIndirection["maxHealth%0"] = TABLE_TableIndirection["humanoid%0"].MaxHealth;
+						TABLE_TableIndirection["healthBarBackground%0"].Size = Vector2.new(5, TABLE_TableIndirection["height%0"]);
+						TABLE_TableIndirection["healthBarBackground%0"].Position = Vector2.new((rootPos.X - (TABLE_TableIndirection["width%0"] / 2)) - 10, headPos.Y);
+						TABLE_TableIndirection["healthBarBackground%0"].Visible = true;
+						TABLE_TableIndirection["healthBar%0"].Size = Vector2.new(5, (TABLE_TableIndirection["health%0"] / TABLE_TableIndirection["maxHealth%0"]) * TABLE_TableIndirection["height%0"]);
+						TABLE_TableIndirection["healthBar%0"].Position = Vector2.new((rootPos.X - (TABLE_TableIndirection["width%0"] / 2)) - 10, (headPos.Y + TABLE_TableIndirection["height%0"]) - TABLE_TableIndirection["healthBar%0"].Size.Y);
+						TABLE_TableIndirection["healthBar%0"].Visible = true;
+					else
+						TABLE_TableIndirection["healthBar%0"].Visible = false;
+						TABLE_TableIndirection["healthBarBackground%0"].Visible = false;
+					end
+					TABLE_TableIndirection["distance%0"] = (TABLE_TableIndirection["rootPart%0"].Position - TABLE_TableIndirection["localPlayer%0"].Character.HumanoidRootPart.Position).magnitude;
+					if (TABLE_TableIndirection["showDistance%0"] and (TABLE_TableIndirection["distance%0"] < 500)) then
+						TABLE_TableIndirection["distanceLabel%0"].Text = string.format("%.2f m", TABLE_TableIndirection["distance%0"]);
+						TABLE_TableIndirection["distanceLabel%0"].Position = Vector2.new(rootPos.X, headPos.Y - 48);
+						TABLE_TableIndirection["distanceLabel%0"].Visible = true;
+					else
+						TABLE_TableIndirection["distanceLabel%0"].Visible = false;
+					end
+				else
+					TABLE_TableIndirection["espBoxOutline%0"].Visible = false;
+					TABLE_TableIndirection["espBox%0"].Visible = false;
+					TABLE_TableIndirection["espName%0"].Visible = false;
+					TABLE_TableIndirection["espTeam%0"].Visible = false;
+					TABLE_TableIndirection["healthBar%0"].Visible = false;
+					TABLE_TableIndirection["healthBarBackground%0"].Visible = false;
+					TABLE_TableIndirection["distanceLabel%0"].Visible = false;
+				end
+			else
+				TABLE_TableIndirection["espBoxOutline%0"].Visible = false;
+				TABLE_TableIndirection["espBox%0"].Visible = false;
+				TABLE_TableIndirection["espName%0"].Visible = false;
+				TABLE_TableIndirection["espTeam%0"].Visible = false;
+				TABLE_TableIndirection["healthBar%0"].Visible = false;
+				TABLE_TableIndirection["healthBarBackground%0"].Visible = false;
+				TABLE_TableIndirection["distanceLabel%0"].Visible = false;
+			end
+		else
+			TABLE_TableIndirection["espBoxOutline%0"].Visible = false;
+			TABLE_TableIndirection["espBox%0"].Visible = false;
+			TABLE_TableIndirection["espName%0"].Visible = false;
+			TABLE_TableIndirection["espTeam%0"].Visible = false;
+			TABLE_TableIndirection["healthBar%0"].Visible = false;
+			TABLE_TableIndirection["healthBarBackground%0"].Visible = false;
+			TABLE_TableIndirection["distanceLabel%0"].Visible = false;
+		end
+	end
+	TABLE_TableIndirection["connection%0"] = game:GetService("RunService").RenderStepped:Connect(updateESP);
+	player.AncestryChanged:Connect(function()
+		if not player:IsDescendantOf(game) then
+			TABLE_TableIndirection["connection%0"]:Disconnect();
+			TABLE_TableIndirection["espBoxOutline%0"]:Remove();
+			TABLE_TableIndirection["espBox%0"]:Remove();
+			TABLE_TableIndirection["espName%0"]:Remove();
+			TABLE_TableIndirection["espTeam%0"]:Remove();
+			TABLE_TableIndirection["healthBar%0"]:Remove();
+			TABLE_TableIndirection["healthBarBackground%0"]:Remove();
+			TABLE_TableIndirection["distanceLabel%0"]:Remove();
+		end
+	end);
+end
+for _, player in pairs(TABLE_TableIndirection["players%0"]:GetPlayers()) do
+	if (player ~= TABLE_TableIndirection["localPlayer%0"]) then
+		createESP(player);
+	end
+end
+TABLE_TableIndirection["players%0"].PlayerAdded:Connect(function(player)
+	if (player ~= TABLE_TableIndirection["localPlayer%0"]) then
+		createESP(player);
+	end
+end);
+TABLE_TableIndirection["Tab%1"]:AddToggle({Name="ESP Box",Default=false,Callback=function(Value)
+	TABLE_TableIndirection["showESPBox%0"] = Value;
+end});
+TABLE_TableIndirection["Tab%1"]:AddToggle({Name="ESP Name",Default=false,Callback=function(Value)
+	TABLE_TableIndirection["showESPName%0"] = Value;
+end});
+TABLE_TableIndirection["Tab%1"]:AddToggle({Name="ESP Team",Default=false,Callback=function(Value)
+	TABLE_TableIndirection["showESPTeam%0"] = Value;
+end});
+TABLE_TableIndirection["Tab%1"]:AddToggle({Name="Health Bar",Default=false,Callback=function(Value)
+	TABLE_TableIndirection["showHealthBar%0"] = Value;
+end});
+TABLE_TableIndirection["Tab%1"]:AddToggle({Name="ESP Distance",Default=false,Callback=function(Value)
+	TABLE_TableIndirection["showDistance%0"] = Value;
+end});
+TABLE_TableIndirection["Tab%2"] = TABLE_TableIndirection["Window%0"]:MakeTab({Name="Aim",Icon="rbxassetid://4483345998",PremiumOnly=false});
+TABLE_TableIndirection["Section%3"] = TABLE_TableIndirection["Tab%2"]:AddSection({Name="Aim Bot"});
+TABLE_TableIndirection["Camera%0"] = workspace.CurrentCamera;
+TABLE_TableIndirection["Players%0"] = game:GetService("Players");
+TABLE_TableIndirection["RunService%0"] = game:GetService("RunService");
+TABLE_TableIndirection["UserInputService%0"] = game:GetService("UserInputService");
+TABLE_TableIndirection["TweenService%0"] = game:GetService("TweenService");
+TABLE_TableIndirection["LocalPlayer%0"] = TABLE_TableIndirection["Players%0"].LocalPlayer;
+TABLE_TableIndirection["Holding%0"] = false;
+_G.AimbotEnabled = false;
+_G.AimbotActive = false;
+_G.SilentAimEnabled = false;
+_G.TeamCheck = false;
+_G.AimPart = "Head";
+_G.Sensitivity = 0.1;
+_G.PredictionEnabled = false;
+_G.PredictionStrength = 0;
+_G.CircleSides = 10;
+_G.CircleColor = Color3.fromRGB(255, 255, 255);
+_G.CircleTransparency = 1;
+_G.CircleRadius = 0;
+_G.CircleFilled = false;
+_G.CircleVisible = true;
+_G.CircleThickness = 1;
+TABLE_TableIndirection["FOVCircle%0"] = Drawing.new("Circle");
+TABLE_TableIndirection["FOVCircle%0"].Position = Vector2.new(TABLE_TableIndirection["Camera%0"].ViewportSize.X / 2, TABLE_TableIndirection["Camera%0"].ViewportSize.Y / 2);
+TABLE_TableIndirection["FOVCircle%0"].Radius = _G.CircleRadius;
+TABLE_TableIndirection["FOVCircle%0"].Filled = _G.CircleFilled;
+TABLE_TableIndirection["FOVCircle%0"].Color = _G.CircleColor;
+TABLE_TableIndirection["FOVCircle%0"].Visible = _G.CircleVisible;
+TABLE_TableIndirection["FOVCircle%0"].Transparency = _G.CircleTransparency;
+TABLE_TableIndirection["FOVCircle%0"].NumSides = _G.CircleSides;
+TABLE_TableIndirection["FOVCircle%0"].Thickness = _G.CircleThickness;
+TABLE_TableIndirection["currentTarget%0"] = nil;
+local function GetClosestPlayer()
+	TABLE_TableIndirection["closestDistance%0"] = _G.CircleRadius;
+	TABLE_TableIndirection["target%0"] = nil;
+	TABLE_TableIndirection["centerPoint%0"] = Vector2.new(TABLE_TableIndirection["Camera%0"].ViewportSize.X / 2, TABLE_TableIndirection["Camera%0"].ViewportSize.Y / 2);
+	for _, player in pairs(TABLE_TableIndirection["Players%0"]:GetPlayers()) do
+		if (player ~= TABLE_TableIndirection["LocalPlayer%0"]) then
+			if (not _G.TeamCheck or (player.Team ~= TABLE_TableIndirection["LocalPlayer%0"].Team)) then
+				TABLE_TableIndirection["character%0"] = player.Character;
+				if (TABLE_TableIndirection["character%0"] and TABLE_TableIndirection["character%0"]:FindFirstChild("HumanoidRootPart")) then
+					TABLE_TableIndirection["humanoid%0"] = TABLE_TableIndirection["character%0"]:FindFirstChild("Humanoid");
+					if (TABLE_TableIndirection["humanoid%0"] and (TABLE_TableIndirection["humanoid%0"].Health > 0)) then
+						TABLE_TableIndirection["screenPoint%0"] = TABLE_TableIndirection["Camera%0"]:WorldToScreenPoint(TABLE_TableIndirection["character%0"].HumanoidRootPart.Position);
+						TABLE_TableIndirection["vectorDistance%0"] = (TABLE_TableIndirection["centerPoint%0"] - Vector2.new(TABLE_TableIndirection["screenPoint%0"].X, TABLE_TableIndirection["screenPoint%0"].Y)).Magnitude;
+						if (TABLE_TableIndirection["vectorDistance%0"] < TABLE_TableIndirection["closestDistance%0"]) then
+							TABLE_TableIndirection["target%0"] = player;
+							TABLE_TableIndirection["closestDistance%0"] = TABLE_TableIndirection["vectorDistance%0"];
+						end
+					end
+				end
 			end
 		end
-	end)
+	end
+	return TABLE_TableIndirection["target%0"];
 end
-
-_G.FullBrightExecuted = true
-_G.FullBrightEnabled = not _G.FullBrightEnabled
+local function PredictTargetPosition(target)
+	if (target and target.Character and target.Character:FindFirstChild("HumanoidRootPart")) then
+		TABLE_TableIndirection["humanoidRootPart%0"] = target.Character.HumanoidRootPart;
+		TABLE_TableIndirection["velocity%0"] = TABLE_TableIndirection["humanoidRootPart%0"].Velocity;
+		TABLE_TableIndirection["predictedPosition%0"] = TABLE_TableIndirection["humanoidRootPart%0"].Position + (TABLE_TableIndirection["velocity%0"] * _G.PredictionStrength);
+		return TABLE_TableIndirection["predictedPosition%0"];
+	end
+	return nil;
 end
-})
-
--- Кнопка
-Tab:AddButton({
-    Name = "Delete fog",
-    Callback = function()
-    -- Получаем папку Lighting
-    local lightingFolder = game:GetService("Lighting") 
-
-    -- Удаляем все объекты в Lighting
-    for _, child in ipairs(lightingFolder:GetChildren()) do
-        child:Destroy() -- Удаляем объект
-        print("Объект '" .. child.Name .. "' был удален из Lighting.") -- Выводим сообщение о удалении
-    end
+TABLE_TableIndirection["UserInputService%0"].InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton2) then
+		TABLE_TableIndirection["Holding%0"] = true;
+		if _G.AimbotEnabled then
+			TABLE_TableIndirection["currentTarget%0"] = GetClosestPlayer();
+		end
+	end
+end);
+TABLE_TableIndirection["UserInputService%0"].InputEnded:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton2) then
+		TABLE_TableIndirection["Holding%0"] = false;
+		TABLE_TableIndirection["currentTarget%0"] = nil;
+	end
+end);
+TABLE_TableIndirection["RunService%0"].RenderStepped:Connect(function()
+	TABLE_TableIndirection["FOVCircle%0"].Position = Vector2.new(TABLE_TableIndirection["UserInputService%0"]:GetMouseLocation().X, TABLE_TableIndirection["UserInputService%0"]:GetMouseLocation().Y);
+	TABLE_TableIndirection["FOVCircle%0"].Radius = _G.CircleRadius;
+	TABLE_TableIndirection["FOVCircle%0"].Filled = _G.CircleFilled;
+	TABLE_TableIndirection["FOVCircle%0"].Color = _G.CircleColor;
+	TABLE_TableIndirection["FOVCircle%0"].Visible = _G.CircleVisible;
+	TABLE_TableIndirection["FOVCircle%0"].Transparency = _G.CircleTransparency;
+	TABLE_TableIndirection["FOVCircle%0"].NumSides = _G.CircleSides;
+	TABLE_TableIndirection["FOVCircle%0"].Thickness = _G.CircleThickness;
+	if (TABLE_TableIndirection["Holding%0"] and _G.AimbotEnabled) then
+		TABLE_TableIndirection["aimPosition%0"] = nil;
+		if TABLE_TableIndirection["currentTarget%0"] then
+			if _G.PredictionEnabled then
+				TABLE_TableIndirection["aimPosition%0"] = PredictTargetPosition(TABLE_TableIndirection["currentTarget%0"]);
+			else
+				TABLE_TableIndirection["aimPosition%0"] = TABLE_TableIndirection["currentTarget%0"].Character[_G.AimPart].Position;
+			end
+			if _G.SilentAimEnabled then
+			elseif _G.AimbotActive then
+				if TABLE_TableIndirection["aimPosition%0"] then
+					TABLE_TableIndirection["TweenService%0"]:Create(TABLE_TableIndirection["Camera%0"], TweenInfo.new(_G.Sensitivity, Enum.EasingStyle.Sine), {CFrame=CFrame.new(TABLE_TableIndirection["Camera%0"].CFrame.Position, TABLE_TableIndirection["aimPosition%0"])}):Play();
+				end
+			end
+		end
+	end
+end);
+TABLE_TableIndirection["Tab%2"]:AddToggle({Name="Enable aim",Default=_G.AimbotEnabled,Callback=function(aimbot)
+	_G.AimbotEnabled = aimbot;
+end});
+TABLE_TableIndirection["Tab%2"]:AddToggle({Name="sticky aim",Default=_G.AimbotActive,Callback=function(active)
+	_G.AimbotActive = active;
+end});
+TABLE_TableIndirection["Tab%2"]:AddDropdown({Name="Aim Part",Default="Head",Options={"Head","Torso"},Callback=function(aim)
+	_G.AimPart = aim;
+end});
+TABLE_TableIndirection["Tab%2"]:AddSlider({Name="Sensitivity",Min=0,Max=1,Default=_G.Sensitivity,Color=Color3.fromRGB(255, 255, 255),Increment=0.001,ValueName=" ",Callback=function(Sens)
+	_G.Sensitivity = Sens;
+end});
+TABLE_TableIndirection["Tab%2"]:AddSlider({Name="Aim FOV",Min=0,Max=1000,Default=_G.CircleRadius,Color=Color3.fromRGB(255, 255, 255),Increment=1,ValueName=" ",Callback=function(Value)
+	_G.CircleRadius = Value;
+end});
+TABLE_TableIndirection["Tab%2"]:AddToggle({Name="Prediction",Default=_G.PredictionEnabled,Callback=function(value)
+	_G.PredictionEnabled = value;
+end});
+TABLE_TableIndirection["Tab%2"]:AddSlider({Name="Prediction Strength",Min=0,Max=2,Default=_G.PredictionStrength,Color=Color3.fromRGB(255, 255, 255),Increment=0.01,ValueName=" ",Callback=function(value)
+	_G.PredictionStrength = value;
+end});
+TABLE_TableIndirection["Tab%2"]:AddColorpicker({Name="FOV Color",Default=Color3.fromRGB(255, 255, 255),Callback=function(color)
+	_G.CircleColor = color;
+end});
+TABLE_TableIndirection["Tab%2"]:AddToggle({Name="Team Check",Default=_G.TeamCheck,Callback=function(Value)
+	_G.TeamCheck = Value;
+end});
+TABLE_TableIndirection["Tab%2"]:AddSlider({Name="FOV Transparency",Min=0,Max=1,Default=_G.CircleTransparency,Color=Color3.fromRGB(255, 255, 255),Increment=0.001,ValueName=" ",Callback=function(trans)
+	_G.CircleTransparency = trans;
+end});
+TABLE_TableIndirection["Tab%3"] = TABLE_TableIndirection["Window%0"]:MakeTab({Name="Player",Icon="rbxassetid://4483345998",PremiumOnly=false});
+TABLE_TableIndirection["savedFov%0"] = 70;
+TABLE_TableIndirection["Tab%3"]:AddSlider({Name="Fov",Min=10,Max=120,Default=70,Color=Color3.fromRGB(255, 255, 255),Increment=1,ValueName="Fov",Callback=function(Value)
+	TABLE_TableIndirection["player%0"] = game.Players.LocalPlayer;
+	TABLE_TableIndirection["camera%1"] = workspace.CurrentCamera;
+	TABLE_TableIndirection["camera%1"].FieldOfView = Value;
+	TABLE_TableIndirection["savedFov%0"] = Value;
+end});
+local function onRightMouseButtonReleased()
+	wait(1);
+	TABLE_TableIndirection["player%0"] = game.Players.LocalPlayer;
+	TABLE_TableIndirection["camera%1"] = workspace.CurrentCamera;
+	if (TABLE_TableIndirection["camera%1"].FieldOfView ~= TABLE_TableIndirection["savedFov%0"]) then
+		TABLE_TableIndirection["camera%1"].FieldOfView = TABLE_TableIndirection["savedFov%0"];
+	end
 end
-})
-
-
-
-
-
-
-
-
-
-
-
-
+TABLE_TableIndirection["userInputService%0"] = game:GetService("UserInputService");
+TABLE_TableIndirection["userInputService%0"].InputEnded:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton2) then
+		onRightMouseButtonReleased();
+	end
+end);
+TABLE_TableIndirection["Section%4"] = TABLE_TableIndirection["Tab%3"]:AddSection({Name="TpTool"});
+TABLE_TableIndirection["Tab%3"]:AddButton({Name="TpTool",Callback=function()
+	TABLE_TableIndirection["LocalPlayer%1"] = game.Players.LocalPlayer;
+	TABLE_TableIndirection["rp%0"] = TABLE_TableIndirection["LocalPlayer%1"].Character.HumanoidRootPart;
+	TABLE_TableIndirection["tool%0"] = Instance.new("Tool", TABLE_TableIndirection["LocalPlayer%1"].Backpack);
+	TABLE_TableIndirection["mouse%0"] = TABLE_TableIndirection["LocalPlayer%1"]:GetMouse();
+	TABLE_TableIndirection["tool%0"].Name = "click tp";
+	TABLE_TableIndirection["tool%0"].RequiresHandle = false;
+	TABLE_TableIndirection["tool%0"].Activated:Connect(function()
+		TABLE_TableIndirection["rp%0"].CFrame = CFrame.new(TABLE_TableIndirection["mouse%0"].Hit.X, TABLE_TableIndirection["mouse%0"].Hit.Y + 4, TABLE_TableIndirection["mouse%0"].Hit.Z);
+	end);
+end});
+TABLE_TableIndirection["Tab%4"] = TABLE_TableIndirection["Window%0"]:MakeTab({Name="Мaр",Icon="rbxassetid://4483345998",PremiumOnly=false});
+TABLE_TableIndirection["Section%5"] = TABLE_TableIndirection["Tab%4"]:AddSection({Name="Map"});
+TABLE_TableIndirection["Tab%4"]:AddButton({Name="Full bright",Callback=function()
+	if not _G.FullBrightExecuted then
+		_G.FullBrightEnabled = false;
+		_G.NormalLightingSettings = {Brightness=game:GetService("Lighting").Brightness,ClockTime=game:GetService("Lighting").ClockTime,FogEnd=game:GetService("Lighting").FogEnd,GlobalShadows=game:GetService("Lighting").GlobalShadows,Ambient=game:GetService("Lighting").Ambient};
+		game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function()
+			if ((game:GetService("Lighting").Brightness ~= 1) and (game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness)) then
+				_G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness;
+				if not _G.FullBrightEnabled then
+					repeat
+						wait();
+					until _G.FullBrightEnabled 
+				end
+				game:GetService("Lighting").Brightness = 1;
+			end
+		end);
+		game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function()
+			if ((game:GetService("Lighting").ClockTime ~= 13) and (game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime)) then
+				_G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime;
+				if not _G.FullBrightEnabled then
+					repeat
+						wait();
+					until _G.FullBrightEnabled 
+				end
+				game:GetService("Lighting").ClockTime = 13;
+			end
+		end);
+		game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function()
+			if ((game:GetService("Lighting").FogEnd ~= 786543) and (game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd)) then
+				_G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd;
+				if not _G.FullBrightEnabled then
+					repeat
+						wait();
+					until _G.FullBrightEnabled 
+				end
+				game:GetService("Lighting").FogEnd = 786543;
+			end
+		end);
+		game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function()
+			if ((game:GetService("Lighting").GlobalShadows ~= false) and (game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows)) then
+				_G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows;
+				if not _G.FullBrightEnabled then
+					repeat
+						wait();
+					until _G.FullBrightEnabled 
+				end
+				game:GetService("Lighting").GlobalShadows = false;
+			end
+		end);
+		game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
+			if ((game:GetService("Lighting").Ambient ~= Color3.fromRGB(178, 178, 178)) and (game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient)) then
+				_G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient;
+				if not _G.FullBrightEnabled then
+					repeat
+						wait();
+					until _G.FullBrightEnabled 
+				end
+				game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178);
+			end
+		end);
+		game:GetService("Lighting").Brightness = 1;
+		game:GetService("Lighting").ClockTime = 13;
+		game:GetService("Lighting").FogEnd = 786543;
+		game:GetService("Lighting").GlobalShadows = false;
+		game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178);
+		TABLE_TableIndirection["LatestValue%0"] = true;
+		spawn(function()
+			repeat
+				wait();
+			until _G.FullBrightEnabled 
+			while wait() do
+				if (_G.FullBrightEnabled ~= TABLE_TableIndirection["LatestValue%0"]) then
+					if not _G.FullBrightEnabled then
+						game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness;
+						game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime;
+						game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd;
+						game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows;
+						game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient;
+					else
+						game:GetService("Lighting").Brightness = 1;
+						game:GetService("Lighting").ClockTime = 12;
+						game:GetService("Lighting").FogEnd = 786543;
+						game:GetService("Lighting").GlobalShadows = false;
+						game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178);
+					end
+					TABLE_TableIndirection["LatestValue%0"] = not TABLE_TableIndirection["LatestValue%0"];
+				end
+			end
+		end);
+	end
+	_G.FullBrightExecuted = true;
+	_G.FullBrightEnabled = not _G.FullBrightEnabled;
+end});
+TABLE_TableIndirection["Tab%4"]:AddButton({Name="Delete fog",Callback=function()
+	TABLE_TableIndirection["lightingFolder%0"] = game:GetService("Lighting");
+	for _, child in ipairs(TABLE_TableIndirection["lightingFolder%0"]:GetChildren()) do
+		child:Destroy();
+		print("Объект '" .. child.Name .. "' был удален из Lighting.");
+	end
+end});
