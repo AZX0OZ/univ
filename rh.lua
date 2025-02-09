@@ -1,6 +1,6 @@
--- ds: https://discord.gg/bvEQEUuCFQ
+-- ds: https://discord.gg/67UTqK8su5
 
--- tg: https://t.me/+FizXrGSg3B9jZTRi
+-- tg:  https://t.me/+iAxwlFrbUsBiNzli
 
  -- ###############            ###           ###   ###              ###          ###   ###        ###   ############                      
  -- ###          ###          #####          ###   ###              ###          ###   ###        ###   ###       ###                         
